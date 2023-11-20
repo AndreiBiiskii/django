@@ -20,10 +20,15 @@ DATA = {
 }
 
 
-def kit(request):
-    result = request.GET.get('servings')
-    print(result)
-    recipe = {'fff', 1}
+def kitchen(request):
+    servings = request.GET.get('servings')
+    dish = request.path_info.split('/')[1]
+    recipe = dict()
+    if servings:
+        for ingredient, amount in DATA[dish].items():
+            recipe[ingredient] = amount * int(servings)
+    else:
+        recipe = DATA[dish]
+    print(recipe)
     context = {'recipe': recipe}
-    context = result
     return render(request, 'calculator/index.html', context)
