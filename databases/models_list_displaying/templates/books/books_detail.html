@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             {% if  book_next  %}
-            <a href=" {{ book_next }} "> {{ book_next }}</a>
+            <a href=" {{ book_next.get_absolute_url }} "> {{ book_next.pub_date }}</a>
             {% endif %}
             <div class="book col-md-4">
                 <h2>{{ book_current.name }}</h2>
@@ -17,7 +17,7 @@
                 <p>Дата публикации: {{ book_current.pub_date}}</p>
             </div>
             {% if  book_previous  %}
-            <a href=" {{ book_previous }} "> {{ book_previous }}</a>
+            <a href=" {{ book_previous.get_absolute_url }} "> {{ book_previous.pub_date }}</a>
             {% endif %}
         </div>
     </div>

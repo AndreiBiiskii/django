@@ -12,7 +12,7 @@
             <div class="book col-md-4">
                 <h4>{{ book.name }}</h4>
                 <p>Автор: {{ book.name }}</p>
-                <p>Дата публикации: {{ book.pub_date }}</p>
+                <p>Дата публикации: <a href="{{ book.get_absolute_url }}">{{ book.pub_date }}</a></p>
             </div>
             {% endfor %}
         </div>

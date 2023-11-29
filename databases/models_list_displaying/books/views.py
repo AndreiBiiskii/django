@@ -15,20 +15,15 @@ def books_view(request):
     return render(request, template, context)
 
 
-def book_detail(request, pub_date):
+def book_detail(request, pub_date: datetime):
     template = 'books/books_detail.html'
     book_current = Book.objects.get(pub_date=pub_date)
-    try:
-        book_next = Book.objects.filter(pub_date__lt=pub_date).order_by('-pub_date').values('pub_date').first()['pub_date']
-    except:
-        book_next = ''
-    try:
-        book_previous = Book.objects.filter(pub_date__gt=pub_date).order_by('pub_date').values('pub_date').first()['pub_date']
-    except:
-        book_previous = ''
+    book_next = Book.objects.filter(pub_date__lt=pub_date).order_by('-pub_date').first()
+    book_previous = Book.objects.filter(pub_date__gt=pub_date).order_by('pub_date').first()
+
     context = {
         'book_current': book_current,
-        'book_next': str(book_next),
-        'book_previous': str(book_previous)
+        'book_next': book_next,
+        'book_previous': book_previous
     }
     return render(request, template, context)
