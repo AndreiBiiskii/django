@@ -17,7 +17,7 @@ def books_view(request):
 
 def book_detail(request, pub_date: datetime):
     template = 'books/books_detail.html'
-    book_current = Book.objects.get(pub_date=pub_date)
+    book_current = Book.objects.filter(pub_date=pub_date)
     book_next = Book.objects.filter(pub_date__lt=pub_date).order_by('-pub_date').first()
     book_previous = Book.objects.filter(pub_date__gt=pub_date).order_by('pub_date').first()
 

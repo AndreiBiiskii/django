@@ -12,9 +12,11 @@
             <a href=" {{ book_next.get_absolute_url }} "> {{ book_next.pub_date }}</a>
             {% endif %}
             <div class="book col-md-4">
-                <h2>{{ book_current.name }}</h2>
-                <p>Автор: {{ book_current.author }}</p>
-                <p>Дата публикации: {{ book_current.pub_date}}</p>
+                {% for book in book_current %}
+                <h2>{{ book.name }}</h2>
+                <p>Автор: {{ book.author }}</p>
+                <p>Дата публикации: {{ book.pub_date}}</p>
+                {% endfor %}
             </div>
             {% if  book_previous  %}
             <a href=" {{ book_previous.get_absolute_url }} "> {{ book_previous.pub_date }}</a>
