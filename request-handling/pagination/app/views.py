@@ -9,7 +9,7 @@ def index(request):
 def bus_stations(request):
     current_page = 1
     next_page_url = 'write your url'
-    return render(request, 'index.html', context={
+    return render(request, 'order.html', context={
         'bus_stations': [{'Name': 'название', 'Street': 'улица', 'District': 'район'},
                          {'Name': 'другое название', 'Street': 'другая улица', 'District': 'другой район'}],
         'current_page': current_page,

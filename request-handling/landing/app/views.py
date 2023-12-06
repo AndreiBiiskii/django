@@ -12,7 +12,7 @@ counter_click = Counter()
 
 def index(request):
     # Реализуйте логику подсчета количества переходов с лендига по GET параметру from-landing
-    return render(request, 'index.html')
+    return render(request, 'order.html')
 
 
 def landing(request):

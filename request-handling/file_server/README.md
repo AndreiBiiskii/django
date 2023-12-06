@@ -28,7 +28,7 @@
 
 ```python
 def view_func(request, arg1):
-    return render(request, 'index.html', context={'arg1': arg1})
+    return render(request, 'order.html', context={'arg1': arg1})
 
 
 urlpatterns = [
@@ -42,7 +42,7 @@ urlpatterns = [
 
 ```python
 def view_func(request, arg1=None):
-    return render(request, 'index.html', context={'arg1': arg1})
+    return render(request, 'order.html', context={'arg1': arg1})
 
 
 urlpatterns = [

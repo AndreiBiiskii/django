@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def file_list(request):
-    template_name = 'index.html'
+    template_name = 'order.html'
     
     # Реализуйте алгоритм подготавливающий контекстные данные для шаблона по примеру:
     context = {

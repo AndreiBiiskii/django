@@ -31,4 +31,4 @@ def kitchen(request):
         recipe = DATA[dish]
     print(recipe)
     context = {'recipe': recipe}
-    return render(request, 'calculator/index.html', context)
+    return render(request, 'calculator/order.html', context)

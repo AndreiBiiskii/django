@@ -1,4 +1,5 @@
 # IDE specific
+demo/
 .idea/
 .vscode/
 
