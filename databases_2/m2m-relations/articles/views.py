@@ -6,10 +6,13 @@ from articles.models import Article
 
 def articles_list(request):
     template = 'articles/news.html'
-    ordering = '-published_at'
-    object_list = Article.objects.all().order_by(ordering)
+    ordering = 'title'
+    articles = Article.objects.all()
+    # for article in articles:
+    #     for scope in article.scopes.filter(is_main = True):
+    #         print(scope.tag.name)
     context = {
-        'object_list': object_list
+        'object_list': articles
     }
 
     # используйте этот параметр для упорядочивания результатов
