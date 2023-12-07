@@ -12,10 +12,10 @@ class ScopeInlineFormset(BaseInlineFormSet):
             if 'is_main' in form.cleaned_data:
                 if form.cleaned_data['is_main']:
                     count += 1
-                if count == 0:
-                    raise ValidationError('Не выбран основной тэг')
-                elif count > 1:
-                    raise ValidationError('Можно выбрать только один основной тег')
+        if count == 0:
+            raise ValidationError('Не выбран основной тэг')
+        elif count > 1:
+            raise ValidationError('Можно выбрать только один основной тег')
         return super().clean()
 
 

@@ -20,6 +20,9 @@ class Article(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=50)
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
         return self.name
 
@@ -30,7 +33,7 @@ class Scope(models.Model):
     is_main = models.BooleanField()
 
     class Meta:
-        ordering = ['-is_main']
+        ordering = ['-is_main', 'tag']
 
     def __str__(self):
         return 'Тэг'
